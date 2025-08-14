@@ -1,0 +1,21 @@
+Bug,Description,Steps to reproduce,Difficulty
+File names with special characters display incorrectly,File names containing emojis or special characters are corrupted in the UI,"1) Enable the flag using localStorage.setItem('QA_BENCHMARK_ENABLE_SPECIAL_CHARACTERS_BUG', '1')
+2) Upload a file with name containing emojis or special characters (e.g., "" My File 🎉.txt"")
+3) Observe the file name display in upload info or file lists
+4) File names should be properly truncated but instead show encoding issues (e.g., "" My File .txt"")",Easy
+Upload progress bar shows incorrect percentage,The upload progress bar displays wrong percentage values during file uploads,"1) Enable the flag using localStorage.setItem('QA_BENCHMARK_ENABLE_PROGRESS_BUG', '1')
+2) Start uploading multiple files simultaneously
+3) Observe the progress bar percentage
+4) Notice the progress jumps between values and shows 100% before actual completion",Medium
+Files uploaded successfully but still show error messages,Files are successfully uploaded but still display error messages in the UI,"1) Enable the flag using localStorage.setItem('QA_BENCHMARK_ENABLE_SUCCESS_ERROR_BUG', '1')
+2) Upload any file successfully
+3) Observe that the file uploads successfully but shows error status and error messages
+4) The file will appear in the file list but the upload info shows it as failed",Hard
+File preview crashes if file name has special characters,File preview shows an error popup when trying to preview files with special characters in their names,"1) Enable the flag using localStorage.setItem('QA_BENCHMARK_ENABLE_PREVIEW_CRASH_BUG', '1')
+2) Upload a file with special characters in the name (e.g., ""My File.jpg"" or ""test@file#.png"")
+3) Try to preview the file by clicking on it
+4) An error popup will appear saying the preview cannot be loaded due to special characters",Medium
+Shared with others tab doesn't show shared files,Files are shared with others but don't appear in the ""shared with others"" tab,"1) Enable the flag using localStorage.setItem('QA_BENCHMARK_ENABLE_SHARED_WITH_OTHERS_BUG', '1')
+2) Share a file with another user
+3) Navigate to the ""Shared with others"" tab
+4) The shared file will not appear in the list, even though it was successfully shared",Hard
